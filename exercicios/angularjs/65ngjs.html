@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicios JS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <main class="container" ng-controller="ctrl65">
+        <h3>65) Faça um algoritmo que receba o valor do salário de uma pessoa e
+            o valor de um financiamento pretendido. Caso o financiamento seja
+            menor ou igual a 5 vezes o salário da pessoa, o algoritmo deverá
+            escrever “Financiamento Concedido”; senão, ele deverá escrever
+            “Financiamento Negado”. Independente de conceder ou não o
+            financiamento, o algoritmo escreverá depois a frase “Obrigado por nos
+            consultar.”</h3>
+
+        <form>
+            <div class="form-group">
+                <label for="s1">Salario</label>
+                <input type="number"  class="form-control" ng-model="s1" name="s1">
+            </div>
+            <div class="form-group">
+                <label for="f1">Financiamento</label>
+                <input type="number"  class="form-control" ng-model="f1" name="f1">
+            </div>
+            
+        </form>
+
+        <br>
+        <span class="alert alert-info" > {{ saida (s1,f1) }} </span>
+
+        <script>
+            var app = angular.module("myApp", []);
+            app.controller("ctrl65", function ($scope) {
+                $scope.saida = function (s1, f1) {
+                   let s = (5 * s1);
+
+                    if (s >= f1) {
+
+                        return "Financiamento Concedido!";
+                        }
+                        return "Financiamento Negado!";
+                    }
+                   
+                });
+        </script>
+
+        <p>
+
+        <h5> Obrigado por nos Concultar!</h5> 
+    </p>
+       
+        
+    </main>
+</body>
+
+</html>
