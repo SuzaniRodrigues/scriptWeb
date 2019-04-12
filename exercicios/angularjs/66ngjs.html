@@ -40,14 +40,23 @@
             app.controller("ctrl66", function ($scope) {
                 $scope.saida = function (ip) {
                   
-                    if (ip >= 0,25){
+                    if (ip <= 0.25){
 
-                        return "" ;
+                        return "OK" ;
                         }
-                        return ;
+                    if(ip > 0.26 && ip <= 0.3){
+                    return "indústrias do 1º grupo são intimadas a suspenderem suas atividades";
+
                     }
+                    if(ip > 0.3 && ip <= 0.4){
+                        return " indústrias do 1º e 2º grupo são intimadas a suspenderem suas atividades";
                    
-                });
+                    }
+                    if (ip > 0.41 && ip <= 0.5){
+                        return "todos os grupos devem ser notificados a paralisarem suas atividades";
+                    }
+                }
+            })
         </script> 
     </main>
 </body>
